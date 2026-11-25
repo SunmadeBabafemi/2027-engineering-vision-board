@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101827">
+<title>2027 Engineering Vision Board</title>
+<style>
+:root{--bg:#0b1220;--panel:#121d2e;--panel2:#18263a;--text:#edf3fb;--muted:#9aabc0;--line:#29394f;--accent:#69d3a5;--blue:#82b7ff}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#0b1220,#101d30);color:var(--text);font:16px/1.55 Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{max-width:1000px;margin:auto;padding:28px 18px 60px}.hero{padding:28px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(120deg,#17283c,#122235);box-shadow:0 18px 50px #0004}
+.eyebrow{color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.75rem}
+h1{font-size:clamp(2rem,6vw,3.5rem);line-height:1.05;margin:12px 0}h2{font-size:1.3rem;margin:0 0 14px}h3{font-size:1rem;margin:0 0 8px}
+p{color:var(--muted);margin:8px 0}.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.pill{border:1px solid var(--line);border-radius:999px;padding:6px 11px;color:#d7e5f5;font-size:.82rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:18px 0}.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px}.stat{font-size:2rem;font-weight:800}.bar{height:10px;background:#26364b;border-radius:99px;overflow:hidden;margin:12px 0}.fill{height:100%;width:0;background:var(--accent);transition:width .2s}
+.section{margin-top:28px}.task{display:flex;align-items:flex-start;gap:12px;padding:13px 0;border-bottom:1px solid var(--line)}.task:last-child{border:0}.task input{width:19px;height:19px;accent-color:#39c58b;margin-top:3px;flex:none}.task label{cursor:pointer;flex:1}.task small{display:block;color:var(--muted);margin-top:3px}.done label .name{text-decoration:line-through;color:#91a39d}
+.phase{color:var(--blue);font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:7px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px}
+ul{padding-left:20px;color:#d5e0ed}li{margin:7px 0}.focus{border-left:3px solid var(--accent);padding:10px 14px;background:#102b29;border-radius:0 10px 10px 0;color:#d9f6e9}
+button{border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:10px;padding:10px 14px;font-weight:650;cursor:pointer}button:hover{border-color:var(--accent)}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}.muted{font-size:.85rem;color:var(--muted)}footer{margin-top:30px;color:var(--muted);font-size:.82rem;text-align:center}
+@media print{body{background:white;color:#111}.hero,.card{background:white;color:#111;border-color:#ccc;box-shadow:none}p,.muted,.task small{color:#444}.pill{color:#111;border-color:#aaa}button{display:none}.bar{background:#ddd}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Career roadmap · December 2026 — November 2027</div>
+  <h1>2027 Engineering<br>Vision Board</h1>
+  <p>Build from mid-level backend engineer to a senior-ready, cloud-native backend engineer with strong distributed-systems expertise.</p>
+  <div class="meta"><span class="pill">Node.js · TypeScript</span><span class="pill">AWS-first</span><span class="pill">UK / Canada opportunities</span><span class="pill">Senior → Staff trajectory</span></div>
+  <div class="actions"><button onclick="window.print()">Print / Save as PDF</button><button onclick="resetProgress()">Reset progress</button></div>
+</header>
+
+<div class="grid">
+  <section class="card"><div class="muted">Milestones completed</div><div class="stat" id="count">0 / 11</div><div class="bar"><div class="fill" id="progress"></div></div><div class="muted" id="percent">0% complete</div></section>
+  <section class="card"><div class="muted">Weekly learning target</div><div class="stat">11 hrs</div><p>Prioritise consistent hands-on work alongside your engineering job.</p></section>
+  <section class="card"><div class="muted">Certification targets</div><div class="stat">3</div><p>AWS Solutions Architect · AWS Developer · Terraform Associate</p></section>
+</div>
+
+<section class="section card">
+<h2>Career north star</h2>
+<div class="focus"><strong>Become an engineer who can own an entire backend system</strong> — from architecture and implementation to cloud infrastructure, security, scaling and production reliability.</div>
+<div class="two" style="margin-top:15px">
+<div><h3>Core strengths to build</h3><ul><li>Advanced TypeScript and Node.js</li><li>Distributed systems and event-driven architecture</li><li>PostgreSQL, Redis and performance</li><li>AWS architecture and infrastructure automation</li><li>Security, observability and reliability</li></ul></div>
+<div><h3>Longer-term direction</h3><ul><li>Senior Backend Engineer</li><li>Staff Backend / Distributed Systems Engineer</li><li>Technical leadership across services and teams</li><li>UK and Canadian senior backend opportunities</li></ul></div>
+</div>
+</section>
+
+<section class="section">
+<h2>2027 milestone tracker</h2>
+<p>Tick off each milestone as you complete it. Your progress is saved in this browser on this device.</p>
+<div class="card" id="milestones">
+<div class="task"><input type="checkbox" id="m0"><label for="m0"><span class="name">Master distributed-systems fundamentals</span><small>February 2027 · Kafka, outbox, Saga, idempotency, consistency and retries</small></label></div>
+<div class="task"><input type="checkbox" id="m1"><label for="m1"><span class="name">Complete payment-processing flagship project</span><small>March 2027 · Ledger, gateway adapters, reconciliation and secure webhooks</small></label></div>
+<div class="task"><input type="checkbox" id="m2"><label for="m2"><span class="name">AWS Solutions Architect – Associate (SAA-C03)</span><small>March 2027 · Networking, compute, storage, security and resilient architecture</small></label></div>
+<div class="task"><input type="checkbox" id="m3"><label for="m3"><span class="name">Terraform-based AWS deployment</span><small>April 2027 · Reusable modules, remote state and environment separation</small></label></div>
+<div class="task"><input type="checkbox" id="m4"><label for="m4"><span class="name">AWS Developer – Associate (DVA-C03)</span><small>June 2027 · SDKs, application integration, deployment and troubleshooting</small></label></div>
+<div class="task"><input type="checkbox" id="m5"><label for="m5"><span class="name">Advanced PostgreSQL and performance engineering</span><small>June 2027 · Query plans, indexes, MVCC, locking and connection pooling</small></label></div>
+<div class="task"><input type="checkbox" id="m6"><label for="m6"><span class="name">Production observability and load testing</span><small>July 2027 · OpenTelemetry, metrics, tracing, k6 and failure testing</small></label></div>
+<div class="task"><input type="checkbox" id="m7"><label for="m7"><span class="name">Terraform Associate (004)</span><small>August 2027 · Infrastructure as Code and state management</small></label></div>
+<div class="task"><input type="checkbox" id="m8"><label for="m8"><span class="name">Kubernetes deployment project</span><small>September 2027 · Deployments, services, ingress, storage and autoscaling</small></label></div>
+<div class="task"><input type="checkbox" id="m9"><label for="m9"><span class="name">Go and AI integration projects</span><small>October 2027 · Go concurrency, LLM APIs, structured outputs and tool calling</small></label></div>
+<div class="task"><input type="checkbox" id="m10"><label for="m10"><span class="name">Senior-level interview preparation and portfolio</span><small>November 2027 · System design, coding, behavioural stories and project walkthroughs</small></label></div>
+</div>
+</section>
+
+<section class="section">
+<h2>Three portfolio projects</h2>
+<div class="grid">
+<div class="card"><div class="phase">Project 01 · Flagship</div><h3>Enterprise payment-processing platform</h3><p>Node.js, TypeScript, PostgreSQL, Redis, Kafka/SQS.</p><ul><li>Double-entry ledger</li><li>Idempotent payments</li><li>Transactional outbox</li><li>Reconciliation and webhooks</li></ul></div>
+<div class="card"><div class="phase">Project 02 · Cloud</div><h3>AWS cloud-native microservices</h3><p>ECS/Fargate, RDS, SQS, Terraform, GitHub Actions.</p><ul><li>Infrastructure as Code</li><li>CI/CD and environments</li><li>Monitoring and tracing</li><li>Backups and recovery</li></ul></div>
+<div class="card"><div class="phase">Project 03 · Reliability</div><h3>Event-driven notification service</h3><p>Node.js, queues, Redis, k6 and observability.</p><ul><li>Concurrent workers</li><li>Retries and dead-letter queues</li><li>Rate limiting and failover</li><li>Load and failure testing</li></ul></div>
+</div>
+</section>
+
+<section class="section card">
+<h2>Weekly learning rhythm · 11 hours</h2>
+<div class="two">
+<div><ul><li>Monday — System design: 1.5 hrs</li><li>Tuesday — AWS / cloud: 1.5 hrs</li><li>Wednesday — Project development: 2 hrs</li><li>Thursday — Database / distributed systems: 1.5 hrs</li></ul></div>
+<div><ul><li>Friday — Revision and technical reading: 1 hr</li><li>Saturday — Hands-on project work: 3 hrs</li><li>Sunday — Rest or light review: 0.5 hr</li></ul></div>
+</div>
+<p class="muted">Weekly rule: produce something tangible — code, a diagram, a benchmark, an architecture decision or a completed learning milestone.</p>
+</section>
+
+<section class="section card">
+<h2>Learning resources</h2>
+<div class="two">
+<div><h3>Architecture and distributed systems</h3><ul><li><a href="https://bytebytego.com/">ByteByteGo</a></li><li><a href="https://www.distributedsystemscourse.com/">Distributed Systems Course</a></li><li><a href="https://microservices.io/">Microservices.io</a></li><li><a href="https://kafka.apache.org/documentation/">Kafka documentation</a></li></ul></div>
+<div><h3>AWS and infrastructure</h3><ul><li><a href="https://skillbuilder.aws/">AWS Skill Builder</a></li><li><a href="https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html">AWS Well-Architected</a></li><li><a href="https://developer.hashicorp.com/terraform/tutorials">Terraform tutorials</a></li><li><a href="https://kubernetes.io/docs/home/">Kubernetes documentation</a></li></ul></div>
+<div><h3>Databases and security</h3><ul><li><a href="https://www.postgresql.org/docs/current/">PostgreSQL docs</a></li><li><a href="https://use-the-index-luke.com/">Use The Index, Luke</a></li><li><a href="https://owasp.org/www-project-api-security/">OWASP API Security</a></li><li><a href="https://opentelemetry.io/docs/">OpenTelemetry</a></li></ul></div>
+<div><h3>Career preparation</h3><ul><li><a href="https://neetcode.io/">NeetCode</a></li><li><a href="https://www.designgurus.io/">DesignGurus</a></li><li><a href="https://go.dev/learn/">Go learning resources</a></li><li><a href="https://platform.openai.com/docs/">OpenAI API docs</a></li></ul></div>
+</div>
+</section>
+<footer>2027 Engineering Vision Board · Personal career development tracker<br>Progress is stored locally in this browser. Export or print a copy periodically.</footer>
+</div>
+<script>
+const ids=Array.from({length:11},(_,i)=>'m'+i);
+function update(){
+ let n=0;
+ ids.forEach(id=>{const el=document.getElementById(id);const saved=localStorage.getItem('engvision-'+id)==='true';el.checked=saved;if(saved)n++;el.closest('.task').classList.toggle('done',saved);el.onchange=()=>{localStorage.setItem('engvision-'+id,el.checked);update();};});
+ document.getElementById('count').textContent=n+' / 11';
+ document.getElementById('progress').style.width=(n/11*100)+'%';
+ document.getElementById('percent').textContent=Math.round(n/11*100)+'% complete';
+}
+function resetProgress(){if(confirm('Reset all milestone progress on this browser?')){ids.forEach(id=>localStorage.removeItem('engvision-'+id));update();}}
+update();
+</script>
+</body></html>
